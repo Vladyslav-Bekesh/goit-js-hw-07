@@ -31,7 +31,9 @@ gallery.addEventListener("click", openBigImage);
 function openBigImage(event) {
   event.preventDefault();
   const instance = basicLightbox.create(
-    `<img src="${event.target.original}" alt="${event.target.description}" />`
+    `<img src="${event.target.getAttribute(
+      "data-source"
+    )}" alt="${event.target.getAttribute("alt")}" />`
   );
   instance.show();
 }
